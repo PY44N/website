@@ -1,0 +1,191 @@
+---
+// Component Imports
+import BaseHead from '../components/BaseHead.astro';
+import TextLink from "../components/TextLink.astro"
+// import BlogPostPreview from '../components/BlogPostPreview.astro';
+
+// Component Script:
+// You can write any JavaScript/TypeScript that you'd like here.
+// It will run during the build, but never in the browser.
+// All variables are available to use in the HTML template below.
+let headerData = {
+  title: `Pyan's Portfolio`,
+  description: `Pyan's portfolio site`,
+  permalink: 'https://example.com/',
+}
+
+// Data Fetching: List all Markdown posts in the repo.
+
+// let allPosts = await Astro.glob('./posts/*.md');
+// allPosts = allPosts.sort((a, b) => new Date(b.frontmatter.publishDate).valueOf() - new Date(a.frontmatter.publishDate).valueOf());
+
+// Full Astro Component Syntax:
+// https://docs.astro.build/core-concepts/astro-components/
+---
+
+<style>
+  h2 {
+    @apply text-lg font-light leading-none text-[#ff5c33];
+  }
+
+  h3 {
+    @apply text-base font-light leading-none text-white;
+  }
+</style>
+
+<html lang="en" class="scroll-smooth">
+
+  <head>
+    <BaseHead {...headerData} />
+  </head>
+
+  <body class="h-full mx-auto bg-black 2xl:max-w-7xl font-display">
+
+    <section class="relative flex items-center">
+      <div class="relative max-w-3xl p-4 py-24 sm:p-20 lg:p-28">
+        <div class="space-y-5">
+          <div class="space-y-3">
+            <h2>
+              Ryan Smith
+            </h2>
+            <p>
+              <TextLink link="mailto:pyan4444@gmail.com" text="pyan4444@gmail.com" />
+            </p>
+            <hr class="border border-dotted border-b-transparent border-x-transparent border-white/10" />
+            <!-- <p class="text-white font-thin tracking-[0.072rem] leading-loose ">
+              Available for new projects and collaborations. Remote.
+            </p> -->
+            <!-- <p>
+              <a class="font-light no-underline text-[#707070] hover:text-white before:content-['↳_']" href="#latest">Latest Blog posts</a>
+            </p> -->
+          </div>
+
+          <div class="space-y-6 text-base">
+            <p class="text-white font-thin tracking-[0.072rem] leading-loose">
+              I am Ryan Smith aka Pyan. I am a programmer and student based out of New York. I am currently learning <TextLink text="Rust" link="https://www.rust-lang.org/" /> and obsessively rewriting everything in it.
+            </p>
+            <!-- <p class="text-white font-thin tracking-[0.072rem] leading-loose ">
+              I'm a self taught Front-end Designer, product guy and a bootstrapped
+              Indie Hacker, with a simple and modernist visual language, specialized
+              in Tailwind CSS, dark-mode design and Tailwind CSS UI Components. I
+              have a wide range of customers around the world, enjoying the products
+              that I built build and designed. I have recently sold my SAAS
+              <a class="font-light no-underline text-[#707070] hover:text-white" href="https://wickedtemplates.com/">Wicked Templates</a>
+              and
+              <a class="font-light no-underline text-[#707070] hover:text-white" href="https://wickedblocks.dev/">Wicked Blocks</a>
+              and right now I am building another one while working on
+              <a class="font-light no-underline text-[#707070] hover:text-white" href="https://589.studio/">my studio</a>
+              and a little project called
+              <a class="font-light no-underline text-[#707070] hover:text-white" href="https://unwrapped.design/">Unwrapped UI</a>.
+            </p>
+            <p class="text-white font-thin tracking-[0.072rem] leading-loose ">
+              My services include UI Design and development.
+            </p>
+            <p class="text-white font-thin tracking-[0.072rem] leading-loose ">
+              For the past four years I've also been curating a collection of color
+              inspiration
+              <a class="font-light no-underline text-[#707070] hover:text-white" href="https://colorsandfonts.com">Colors &amp; Fonts</a>, creating an extended VS Code Theme,
+              <a class="font-light no-underline text-[#707070] hover:text-white" href="https://serendipitytheme.com/">Serendipity Theme</a>, curating brutalist and experimental websites on
+              <a class="font-light no-underline text-[#707070] hover:text-white" href="https://brutalist.one/">Brutalist One</a>.
+            </p>
+            <p class="text-white font-thin tracking-[0.072rem] leading-loose ">
+              I have also been launching projects on
+              <a class="font-light no-underline text-[#707070] hover:text-white" href="https://www.producthunt.com/@michael_andreuzza">Product Hunt</a>
+              successfully.
+            </p>
+            <p class="text-white font-thin tracking-[0.072rem] leading-loose ">
+              I had the privilege of having my work featured on the following sites
+              and publications:
+              <a class="font-light no-underline text-[#707070] hover:text-white" href="https://bytes.dev/archives/29#:~:text=WickedBlocks%20is%20a%20collection%20of%20120%2B%20layout%20blocks%20and%20components%20built%20with%20Tailwind%20CSS%20ready%20to%20copy%2Dpaste%20into%20your%20Tailwind%20project.%20If%20you%27d%20like%20the%20New%20England%20version%2C%20check%20out%20WickedBlachs.%20My%20boy%27s%20wicked%20smaht">Bytes
+              </a>
+              ,
+              <a class="font-light no-underline text-[#707070] hover:text-white" href="https://www.producthunt.com/@michael_andreuzza/made">Product Hunt
+              </a>
+              ,
+              <a class="font-light no-underline text-[#707070] hover:text-white" href="https://buttondown.email/alpinejs/archive/alpinejs-weekly-72/#:~:text=Vertical%20tabs%20with%20Alpine.js%20by%20%40Mike_Andreuzza">Alpine.js Weekly
+              </a>
+              ,<a class="font-light no-underline text-[#707070] hover:text-white" href="https://onepagelove.com/authors/wickedtemplates">One Page Love
+              </a>
+              ,<a class="font-light no-underline text-[#707070] hover:text-white" href="https://www.creative-tim.com/blog/web-development/free-tailwind-css-templates-resources/?msclkid=177ca36ac6e111eca02ea9a67f498a60#:~:text=CSS%20and%20Flowbite.-,Colors%20%26%20Fonts,-Live%20Preview%C2%A0%C2%A0">Creative Tim
+              </a>
+              ,<a class="font-light no-underline text-[#707070] hover:text-white" href="https://github.com/bradtraversy/design-resources-for-developers">Brad Traversy
+              </a>
+              ,<a class="font-light no-underline text-[#707070] hover:text-white" href="https://speckyboy.com/weekly-news-for-designers-610/#:~:text=A%20color%20and%20typography%20system%20for%20designers.%20Compatible%20with%20Figma%2C%20Sketch%20and%20more">Specky Boy
+              </a>
+              ,<a class="font-light no-underline text-[#707070] hover:text-white" href="https://tympanus.net/codrops/collective/collective-608/#:~:text=Colors%20%26%20Fonts%20is%20a%20curated%20library%20of%20colors%20and%20fonts%20for%20digital%20designers%20and%20web%20developers">Code Drops
+              </a>
+              ,<a class="font-light no-underline text-[#707070] hover:text-white" href="https://www.youtube.com/watch?v=LQw2ljPHJU0&t=606s">Design Course
+              </a>
+              ,<a class="font-light no-underline text-[#707070] hover:text-white" href="https://www.youtube.com/watch?v=IfybAqUqXHc&t=175s">Laravel Daily
+              </a>
+              ,<a class="font-light no-underline text-[#707070] hover:text-white" href="https://www.darkmodedesign.com">Dark Mode Design
+              </a>
+              ,<a class="font-light no-underline text-[#707070] hover:text-white" href="https://github.com/arthurspk/guiadevbrasil">Guia Dev Brasil
+              </a>
+            </p>
+            <p class="text-white font-thin tracking-[0.072rem] leading-loose ">
+              You can find me on
+              <a class="font-light no-underline text-[#707070] hover:text-white" href="https://dribbble.com/MichaelAndreuzza">Dribble
+              </a>
+              ,
+              <a class="font-light no-underline text-[#707070] hover:text-white" href="https://www.figma.com/@MikeAndreuzza">Figma Community
+              </a>
+              ,
+              <a class="font-light no-underline text-[#707070] hover:text-white" href="https://www.indiehackers.com/Michael_Andreuzza">Indie Hackers
+              </a>
+              and
+              <a class="font-light no-underline text-[#707070] hover:text-white" href="https://twitter.com/Mike_Andreuzza">Twitter
+              </a>
+              and you can get in touch
+              <a class="font-light no-underline text-[#707070] hover:text-white" href="mailto:michael@andreuzza.com">via e-mail</a>.
+            </p> -->
+            <h3>Projects/Experiences</h3>
+            <p class="text-white font-thin tracking-[0.072rem] leading-loose">
+              Obfuscator (WIP) - A program that obfuscates <TextLink link="https://www.lua.org/" text="Lua" /> code. It allows you to release programs coded in Lua without giving the source code to everyone who runs the program.
+            </p>
+            <p class="text-white font-thin tracking-[0.072rem] leading-loose">
+              Programming Team Lead for the <TextLink link="https://github.com/CSHCyberhawks" text="CSH Cyberhawks" /> - 
+            </p>
+            <hr class="border border-dotted border-b-transparent border-x-transparent border-white/10" />
+            <p class="text-white font-thin tracking-[0.072rem] leading-loose ">
+              Michael Andreuzza
+              <br />
+              <span class="text-xs opacity-50">Location: Åland Islands, Finland</span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- <section class="relative flex items-center" id="latest">
+      <div class="relative max-w-3xl p-4 py-24 sm:p-20 lg:p-28">
+        <div class="space-y-24">
+          <div class="space-y-3">
+            <h2 class="text-base font-light leading-none text-white">
+              Latest posts
+            </h2>
+            <p class="text-[#707070] text-xs">
+              By Michael Andreuzza
+            </p>
+            <hr class="border border-dotted border-b-transparent border-x-transparent border-white/10" />
+          </div>
+
+          <div class="space-y-6 text-base">
+
+            <section class="space-y-3">
+              <h2 class="text-base font-light leading-none text-white">{headerData.title}</h2>
+              <p class="text-white font-thin tracking-[0.072rem] leading-loose ">{headerData.description}</p>
+              <hr class="border border-dotted border-b-transparent border-x-transparent border-white/10" />
+            </section>
+            <article aria-label="Blog post list" class="space-y-3">
+              {allPosts.map((p) =>
+              <BlogPostPreview post={p} />)}
+            </article>
+            <hr class="border border-dotted border-b-transparent border-x-transparent border-white/10" />
+
+          </div>
+        </div>
+      </div>
+    </section> -->
+  </body>
+
+</html>

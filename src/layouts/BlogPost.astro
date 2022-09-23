@@ -1,0 +1,40 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import BlogPost from '../components/BlogPost.astro';
+const { content } = Astro.props;
+const { title, description, publishDate, author, heroImage, permalink, alt } = content;
+---
+<html lang={content.lang || 'en' }>
+	<head>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prism-themes@1.9.0/themes/prism-laserwave.css"/>
+    <BaseHead {title} {description} {permalink} />
+  </head>
+  <body class="h-full mx-auto bg-black 2xl:max-w-7xl font-display">
+
+    <section class="relative flex items-center">
+      <div class="relative max-w-3xl p-4 py-24 sm:p-20 lg:p-28">
+        <div class="space-y-24">
+          <a href="index.html" class="text-white text-xs">&larr; Home</a>
+          <div class="space-y-3">
+            <h2 class="text-base font-light leading-none text-white">
+              Latest posts
+            </h2>
+            <p class="text-[#707070] text-xs">
+              By Michael Andreuzza
+            </p>
+            <hr class="border border-dotted border-b-transparent border-x-transparent border-white/10" />
+          </div>
+          <div class="space-y-6 text-base">
+            <!---
+            Here will be injected the content from the file with name: BlogPost.astro
+            -->
+            <BlogPost {title} {author} {heroImage} {publishDate} {alt}>
+              <slot />
+            </BlogPost>
+            <hr class="border border-dotted border-b-transparent border-x-transparent border-white/10" />
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

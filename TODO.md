@@ -1,0 +1,1 @@
+- [ ] Add an actual link for index.astro permalink
