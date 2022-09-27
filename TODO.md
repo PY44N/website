@@ -1,3 +1,2 @@
-- [ ] Add an actual link for index.astro permalink
 - [ ] Add robots.txt
 - [ ] Fix html lang property not existing

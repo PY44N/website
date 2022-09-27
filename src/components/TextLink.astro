@@ -1,17 +1,16 @@
 ---
 export interface Props {
-    text: string;
-    link: string;
+  link: string;
 }
-const { text, link } = Astro.props;
+const { link } = Astro.props;
 ---
 
 <style>
-    a {
-        @apply font-light underline text-[#707070] hover:text-[#A9DEF9];
-        -webkit-transition: color 250ms; /* For Safari 3.0 to 6.0 */
-        transition: color 250ms; /* For modern browsers */
-    }
+  a {
+    @apply font-light underline text-[#707070] hover:text-[#A9DEF9];
+    -webkit-transition: color 250ms; /* For Safari 3.0 to 6.0 */
+    transition: color 250ms; /* For modern browsers */
+  }
 </style>
 
-<a href={link}>{text}</a>
+<a href={link}><slot /></a>
