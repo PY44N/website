@@ -9,11 +9,9 @@
     "preview": "astro preview"
   },
   "devDependencies": {
-    "@astrojs/svelte": "^1.0.0",
     "@astrojs/tailwind": "^0.2.1",
     "@tailwindcss/typography": "^0.5.2",
-    "astro": "^1.0.0-beta.53",
-    "svelte": "^3.50.1"
+    "astro": "^1.0.0-beta.53"
   },
   "dependencies": {
     "tailwindcss": "^3.1.4"
