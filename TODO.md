@@ -1,2 +1,0 @@
-- [ ] Add robots.txt
-- [ ] Fix html lang property not existing
