@@ -1,5 +1,5 @@
 ---
-import ProjectCard from "../ProjectCard.astro";
+import ProjectCard from "../ProjectCard.svelte";
 ---
 
 <style lang="less">
@@ -11,8 +11,12 @@ import ProjectCard from "../ProjectCard.astro";
     div {
       display: grid;
       justify-items: center;
-      grid-template-columns: auto auto auto;
+      grid-template-columns: auto auto auto auto;
     }
+  }
+
+  h2 {
+    color: #ccd6f6;
   }
 </style>
 
@@ -20,14 +24,27 @@ import ProjectCard from "../ProjectCard.astro";
   <h2>Projects/Experiences</h2>
 
   <div>
-    <ProjectCard name="Lua Obfuscator" dates="Mar 2022 - Present">
+    <ProjectCard
+      name="Lua Obfuscator"
+      dates="Mar 2022 - Present"
+      tech={["Rust", "Lua"]}
+    >
       A program that obfuscates Lua code. It allows you to release programs
       coded in Lua without distributing the source code.
     </ProjectCard>
 
-    <ProjectCard name="Programming Team Lead for the CSH Cyberhawks">
-      I build a completely custom swerve drive train with field orientation, PID
-      controllers, full odometry, and a dynamic autonomous mode.
+    <ProjectCard
+      name="MiniSteve"
+      link="https://github.com/CshCyberhawks/MiniSteve"
+    >
+      As programming team lead, I programmed a FRC robot with a completely
+      custom swerve drive train with field orientation, PID controllers, full
+      odometry, and a dynamic autonomous mode.
+    </ProjectCard>
+
+    <ProjectCard name="Lua Obfuscator">
+      A program that obfuscates Lua code. It allows you to release programs
+      coded in Lua without distributing the source code.
     </ProjectCard>
 
     <ProjectCard name="Lua Obfuscator">
