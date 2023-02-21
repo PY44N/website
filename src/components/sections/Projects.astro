@@ -1,0 +1,38 @@
+---
+import ProjectCard from "../ProjectCard.astro";
+---
+
+<style lang="less">
+  div {
+    position: relative;
+    height: 50vh;
+    text-align: center;
+
+    div {
+      display: grid;
+      justify-items: center;
+      grid-template-columns: auto auto auto;
+    }
+  }
+</style>
+
+<div>
+  <h2>Projects/Experiences</h2>
+
+  <div>
+    <ProjectCard name="Lua Obfuscator" dates="Mar 2022 - Present">
+      A program that obfuscates Lua code. It allows you to release programs
+      coded in Lua without distributing the source code.
+    </ProjectCard>
+
+    <ProjectCard name="Programming Team Lead for the CSH Cyberhawks">
+      I build a completely custom swerve drive train with field orientation, PID
+      controllers, full odometry, and a dynamic autonomous mode.
+    </ProjectCard>
+
+    <ProjectCard name="Lua Obfuscator">
+      A program that obfuscates Lua code. It allows you to release programs
+      coded in Lua without distributing the source code.
+    </ProjectCard>
+  </div>
+</div>
