@@ -1,26 +1,8 @@
-import { useCallback } from "react";
-import Particles from "react-tsparticles";
-import { loadFull } from "tsparticles";
+<script>
+    import Particles from "svelte-particles";
+    import { loadFull } from "tsparticles";
 
-export default function ParticleRenderer() {
-  const particlesInit = useCallback(async (engine) => {
-    // console.log(engine);
-    // you can initiate the tsParticles instance (engine) here, adding custom shapes or presets
-    // this loads the tsparticles package bundle, it's the easiest method for getting everything ready
-    // starting from v2 you can add only the features you need reducing the bundle size
-    await loadFull(engine);
-  }, []);
-
-  const particlesLoaded = useCallback(async (container) => {
-    // await console.log(container);
-  }, []);
-
-  return (
-    <Particles
-      id="tsparticles"
-      init={particlesInit}
-      loaded={particlesLoaded}
-      options={{
+    let particlesConfig = {
         background: {
           color: {
             value: "#000000",
@@ -91,7 +73,26 @@ export default function ParticleRenderer() {
           },
         },
         detectRetina: true,
-      }}
-    />
-  );
-}
+    };
+
+    let onParticlesLoaded = event => {
+        const particlesContainer = event.detail.particles;
+
+        // you can use particlesContainer to call all the Container class
+        // (from the core library) methods like play, pause, refresh, start, stop
+    };
+
+    let particlesInit = async engine => {
+        // you can use main to customize the tsParticles instance adding presets or custom shapes
+        // this loads the tsparticles package bundle, it's the easiest method for getting everything ready
+        // starting from v2 you can add only the features you need reducing the bundle size
+        await loadFull(engine);
+    };
+</script>
+
+<Particles
+    id="tsparticles"
+    options="{particlesConfig}"
+    on:particlesLoaded="{onParticlesLoaded}"
+    particlesInit="{particlesInit}"
+/>
