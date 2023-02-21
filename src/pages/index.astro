@@ -1,5 +1,7 @@
 ---
 import Top from "../components/sections/Top.astro";
+import Header from "../components/Header.astro";
+import ParticleRenderer from "../components/ParticleRenderer";
 ---
 
 <style lang="less">
@@ -21,7 +23,9 @@ import Top from "../components/sections/Top.astro";
     <title>Pyan's Portfolio</title>
   </head>
   <body>
+    <ParticleRenderer client:load />
+
+    <Header />
     <Top />
-    <p>Bottom Thing</p>
   </body>
 </html>
