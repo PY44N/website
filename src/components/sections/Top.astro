@@ -1,0 +1,28 @@
+---
+import ParticleRenderer from "../ParticleRenderer";
+---
+
+<style lang="less">
+  div {
+    height: 100vh;
+    display: grid;
+    place-items: center;
+    align-content: center;
+
+    div {
+      position: relative;
+    }
+  }
+
+  h1 {
+    color: #a9def9;
+  }
+</style>
+
+<div>
+  <ParticleRenderer client:load />
+  <div>
+    <h1>Ryan Smith</h1>
+    <h2>aka Pyan</h2>
+  </div>
+</div>
