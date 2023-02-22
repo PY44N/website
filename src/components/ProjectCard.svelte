@@ -59,7 +59,6 @@
         text-decoration: none;
         color: inherit;
         stroke: rgb(154, 145, 129);
-
     }
 
     .desc {
