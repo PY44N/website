@@ -1,2 +1,0 @@
-https://materialui-portfolio.netlify.app/
-https://github.com/devmahmud/material-ui-portfolioy

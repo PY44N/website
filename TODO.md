@@ -1,2 +1,4 @@
 - [ ] Fix Headers
-- [ ] Finish Project Cards
+- [ ] SEO
+- [ ] Inital Load Animations
+- [ ] Project descriptions
