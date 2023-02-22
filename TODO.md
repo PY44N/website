@@ -1,4 +1,3 @@
-- [ ] Fix Headers
 - [ ] SEO
 - [ ] Inital Load Animations
 - [ ] Project descriptions
