@@ -31,11 +31,6 @@
       height: 100%;
     }
   
-    img {
-      width: 100%;
-      border-radius: 10%;
-    }
-  
     .date {
       font-size: smaller;
     }
@@ -76,7 +71,7 @@
       padding-right: 5%;
     }
   </style>
-  
+
   <div class="parent">
     <a href={link} target="_blank" rel="noreferrer">
       <div class="container">

@@ -1,3 +1,2 @@
 - [ ] SEO
-- [ ] Inital Load Animations
 - [ ] Project descriptions

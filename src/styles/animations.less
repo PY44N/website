@@ -1,0 +1,41 @@
+.keyframes(@name; @arguments) {
+  @-moz-keyframes @name {
+    @arguments();
+  }
+  @-webkit-keyframes @name {
+    @arguments();
+  }
+  @keyframes @name {
+    @arguments();
+  }
+}
+
+.animation(@arguments) {
+  -webkit-animation: @arguments;
+  -moz-animation: @arguments;
+  animation: @arguments;
+}
+
+.enter-bottom {
+  .keyframes(enter-bottom;{
+		0% {
+            opacity: 0;
+            transform: translateY(100%);
+        }
+		100% { opacity: 1; }
+    });
+
+  .animation(enter-bottom 1s);
+}
+
+.enter-top {
+  .keyframes(enter-top;{
+          0% {
+              opacity: 0;
+              transform: translateY(-100%);
+          }
+          100% { opacity: 1; }
+      });
+
+  .animation(enter-top 1s);
+}
