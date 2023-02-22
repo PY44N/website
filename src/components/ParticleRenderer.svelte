@@ -49,11 +49,12 @@
             directions: "none",
             enable: true,
             outModes: {
-              default: "bounce",
+              default: "out",
             },
             random: false,
             speed: 3,
             straight: false,
+            bounce: false
           },
           number: {
             density: {
