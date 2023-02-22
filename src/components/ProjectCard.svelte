@@ -13,15 +13,16 @@
       padding: 2%;
       height: 100%;
       width: 100%;
-      transition: all 0.1s;
+      transition: all .25s;
+      color: rgb(170, 182, 194);
 
       &:hover {
         transform: translateY(-3%);
+        color: #64ffda;
       }
     }
 
     h4 {
-        color: rgb(170, 182, 194);
         margin: 3%;
     }
   
@@ -50,6 +51,7 @@
   
       li {
         margin-right: 4%;
+        color: rgb(146, 136, 120);
       }
     }
 
