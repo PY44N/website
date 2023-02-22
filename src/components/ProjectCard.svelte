@@ -8,7 +8,7 @@
 
 <style lang="less">
     .parent {
-      background-color: #112240;
+      background-color: rgb(17, 24, 38);
       border-radius: 10%;
       padding: 2%;
       height: 100%;
@@ -21,7 +21,7 @@
     }
 
     h4 {
-        color: #ccd6f6;
+        color: rgb(170, 182, 194);
         margin: 3%;
     }
   
@@ -37,6 +37,7 @@
 
     p {
       margin: 3%;
+      color: rgb(154, 161, 166);
     }
   
     ul {
@@ -55,7 +56,7 @@
     a {
         text-decoration: none;
         color: inherit;
-        stroke: #8892b0;
+        stroke: rgb(154, 145, 129);
 
     }
 

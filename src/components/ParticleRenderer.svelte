@@ -5,7 +5,7 @@
     let particlesConfig = {
         background: {
           color: {
-            value: "#0a192f",
+            value: "#0b121c",
           },
         },
         fpsLimit: 120,
