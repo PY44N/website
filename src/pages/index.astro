@@ -1,96 +1,33 @@
 ---
-// Component Imports
-import BaseHead from "../components/BaseHead.astro";
-import TextLink from "../components/TextLink.astro";
-import Socials from "../components/Socials.astro";
+import Top from "../components/sections/Top.astro";
+import Header from "../components/Header.astro";
+import ParticleRenderer from "../components/ParticleRenderer.svelte";
+import Projects from "../components/sections/Projects.astro";
+import SEO from "../components/SEO.astro";
 
-// Component Script:
-// You can write any JavaScript/TypeScript that you'd like here.
-// It will run during the build, but never in the browser.
-// All variables are available to use in the HTML template below.
-let headerData = {
-  title: `Pyan's Portfolio`,
-  description: `Pyan's portfolio site`,
-  permalink: "https://www.pyan.xyz/",
-};
+import "@fontsource/open-sans";
+import "../styles/global.less";
 ---
 
-<style>
-  h2 {
-    @apply text-lg font-light leading-none text-[#A9DEF9];
-  }
-
-  h3 {
-    @apply text-base font-light leading-none text-white;
-  }
-
-  ul {
-    list-style: none;
-  }
-
-  ul li::before {
-    content: "\2022";
-    color: rgba(255, 255, 255, 0.712);
-    font-weight: bold;
-    display: inline-block;
-    width: 1em;
-    margin-left: -1em;
+<style lang="less">
+  h1 {
+    color: #a9def9;
   }
 </style>
 
-<BaseHead {...headerData} />
+<html lang="en">
+  <head>
+    <SEO
+      title="Ryan Smith's Portfolio"
+      description="Ryan Smith is a student developer who occasionally makes cool things"
+      permalink="https://www.pyan.xyz/"
+    />
+  </head>
+  <body>
+    <ParticleRenderer client:load />
 
-<body class="h-full mx-auto bg-black font-display">
-  <section class="relative flex items-center">
-    <div class="relative max-w-3xl p-4 py-24 sm:p-20 lg:p-28">
-      <div class="space-y-5">
-        <div class="space-y-3">
-          <h2>Ryan Smith</h2>
-          <Socials />
-          <hr
-            class="border border-dotted border-b-transparent border-x-transparent border-white/10"
-          />
-        </div>
-
-        <div class="space-y-6 text-base">
-          <p class="text-white font-thin tracking-[0.072rem] leading-loose">
-            I am Ryan Smith aka Pyan. I am a programmer and student based in New
-            York. I am currently learning <TextLink
-              link="https://www.rust-lang.org/">Rust</TextLink
-            > and obsessively rewriting everything in it.
-          </p>
-          <h3>Projects/Experiences</h3>
-          <ul class="space-y-6 text-base">
-            <li class="text-white font-thin tracking-[0.072rem] leading-loose">
-              Obfuscator (WIP) - A program that <TextLink
-                link="https://en.wikipedia.org/wiki/Obfuscation_(software)"
-                >obfuscates</TextLink
-              >
-              <TextLink link="https://www.lua.org/">Lua</TextLink> code. It allows
-              you to release programs coded in Lua without distributing the source
-              code.
-            </li>
-
-            <li class="text-white font-thin tracking-[0.072rem] leading-loose">
-              Programming Team Lead for the <TextLink
-                link="https://github.com/CSHCyberhawks">CSH Cyberhawks</TextLink
-              > - I build a completely custom <TextLink
-                link="https://team1640.com/wiki/index.php/Swerve_Central#What_is_Swerve_Drive"
-                >swerve drive</TextLink
-              >
-              train with <TextLink
-                link="https://www.youtube.com/watch?v=50ZRrYFWPIc"
-                >field orientation</TextLink
-              >, <TextLink link="https://en.wikipedia.org/wiki/PID_controller"
-                >PID controllers</TextLink
-              >, full <TextLink link="https://en.wikipedia.org/wiki/Odometry"
-                >odometry</TextLink
-              >, and a dynamic autonomous mode.
-            </li>
-          </ul>
-          <!-- <hr class="border border-dotted border-b-transparent border-x-transparent border-white/10" /> -->
-        </div>
-      </div>
-    </div>
-  </section>
-</body>
+    <Header />
+    <Top />
+    <Projects />
+  </body>
+</html>

@@ -1,0 +1,89 @@
+---
+import ProjectCard from "../ProjectCard.svelte";
+---
+
+<style lang="less">
+  div {
+    position: relative;
+    text-align: center;
+    box-sizing: border-box;
+  }
+
+  .cards {
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    grid-gap: 8%;
+    margin-left: 3%;
+    margin-right: 3%;
+    margin-bottom: 3%;
+  }
+
+  @media (min-width: 600px) {
+    .cards {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media (min-width: 1200px) {
+    .cards {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+  }
+
+  h2 {
+    color: rgb(170, 182, 194);
+  }
+</style>
+
+<div>
+  <h2 id="projects">Projects</h2>
+
+  <div class="cards">
+    <ProjectCard
+      name="Lua Obfuscator"
+      dates="Mar 2022 - Present"
+      tech={["Rust", "Lua"]}
+    >
+      I wrote a program that obfuscates Lua code. It allows you to release
+      programs coded in Lua without distributing the source code. It can be used
+      for Roblox games or any general purpose Lua applications.
+    </ProjectCard>
+
+    <ProjectCard
+      name="MiniSteve"
+      link="https://github.com/CshCyberhawks/MiniSteve"
+      tech={["Java", "Gradle"]}
+      dates="Jan 2022 - Mar 2022"
+    >
+      As programming lead, I coded an FRC robot with a custom swerve drive
+      train, field orientation, PID controllers, full odometry, and a dynamic
+      autonomous mode. These advanced features provide precise control, accurate
+      tracking, and customizable movements for a strategic advantage during
+      competitions.
+    </ProjectCard>
+
+    <ProjectCard
+      name="Portfolio Website"
+      link="https://github.com/PY44N/website"
+      tech={["Astro", "Less"]}
+    >
+      I developed this website using Astro and Less, creating a fully responsive
+      design and implementing SEO best practices for improved visibility on
+      search engines.
+    </ProjectCard>
+
+    <ProjectCard
+      name="SwoLib"
+      link="https://github.com/CshCyberhawks/SwoLib"
+      dates="May 2022 - Present"
+      tech={["Kotlin", "Gradle", "Dokka", "JUnit"]}
+    >
+      I created a library for programming FRC robots with a customizable swerve
+      drive, swerve autonomous utilities, limelight utilities, and math classes
+      for vectors and bezier curves. It's fully documented with Dokka and has
+      full unit testing with JUnit, making it easy to use and reliable during
+      competitions.
+    </ProjectCard>
+  </div>
+</div>
