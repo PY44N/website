@@ -9,6 +9,20 @@ import ProjectCard from "../ProjectCard.svelte";
     box-sizing: border-box;
   }
 
+  a {
+    color: #9a9ba0; // #a8b2d1
+    -webkit-transition: all 250ms; /* For Safari 3.0 to 6.0 */
+    transition: all 250ms; /* For modern browsers */
+    // display: inline-block;
+    // padding: 0.5rem;
+    text-decoration: none;
+
+    &:hover {
+      stroke: #64ffda;
+      color: #64ffda;
+    }
+  }
+
   .cards {
     display: grid;
     justify-items: center;
@@ -52,16 +66,31 @@ import ProjectCard from "../ProjectCard.svelte";
     </ProjectCard>
 
     <ProjectCard
-      name="MiniSteve"
-      link="https://github.com/CshCyberhawks/MiniSteve"
-      tech={["Java", "Gradle", "Robotics"]}
-      dates="Jan 2022 - Mar 2022"
+      name="Slippy"
+      dates="Jan 2024 - Apr 2024"
+      tech={["Kotlin", "Gradle", "JUnit"]}
+      link="https://github.com/CshCyberhawks/Slippy"
     >
-      As programming lead, I coded an FRC robot with a custom swerve drive
-      train, field orientation, PID controllers, full odometry, and a dynamic
-      autonomous mode. These advanced features provide precise control, accurate
-      tracking, and customizable movements for a strategic advantage during
-      competitions.
+      As programming lead and team captain, I helped to design and program an
+      FRC robot complete with swerve drive, full odometry, dynamic autonomous
+      modes, command-based inverse kinematics, and dynamic trajectory
+      calculations that allowed the robot to shoot from anywhere. This robot won
+      awards for its code at the local Long Island Regional and for its
+      innovative bumper design at the world championships in Houston, Texas.
+    </ProjectCard>
+
+    <ProjectCard
+      name="Lua Deserializer"
+      dates="Mar 2022 - May 2023"
+      tech={["Rust", "Lua"]}
+      link="https://github.com/PY44N/LuaDeserializer"
+    >
+      I created a program that takes in Lua code, complies it, and deserializes
+      the compiled output. This allows you to work with the internal structures
+      of the Lua language, and can be used to view the compiled output or to
+      build an obfuscator on top of the language. Used in my <a
+        href="https://github.com/PY44N/LuaObfuscatorV2">Lua Obfuscator</a
+      >.
     </ProjectCard>
 
     <ProjectCard
@@ -75,6 +104,30 @@ import ProjectCard from "../ProjectCard.svelte";
     </ProjectCard>
 
     <ProjectCard
+      name="Safe Water Operation"
+      dates="Sep 2023 - Apr 2024"
+      tech={["React", "Javascript", "Leaflet"]}
+    >
+      As part of a small group, I developed an app to make water quality data
+      easily accessible to everyone. The app shows data from the United States
+      Geological Survey on a map to make it easy to tell the water quality in
+      your area. This app won the congressional app challenge for NY01 and was
+      presented to congress at the house of code event in April 2024.
+    </ProjectCard>
+
+    <!-- <ProjectCard
+      name="Oxygen Tanks"
+      dates="Mar 2022 - May 2023"
+      tech={["Flutter", "Dart", "Svelte", "Javascript"]}
+    >
+      As part of my work in the 3D Design and Innovation Lab at Northwell
+      Health, I created a Flutter app to track the oxygen levels in patient
+      transport tanks and send push notifications to alert the relavant hospital
+      staff if any of the tanks are running low. This app is currently being
+      evaluated for use across the healthcare system
+    </ProjectCard> -->
+
+    <ProjectCard
       name="SwoLib"
       link="https://github.com/CshCyberhawks/SwoLib"
       dates="May 2022 - Jan 2024"
@@ -84,6 +137,31 @@ import ProjectCard from "../ProjectCard.svelte";
       drive, swerve autonomous utilities, limelight utilities, and math classes
       for vectors and bezier curves. It's fully documented with Dokka and has
       full unit testing with JUnit, making it easy to use and reliable during
+      competitions.
+    </ProjectCard>
+
+    <ProjectCard
+      name="Good News Goose"
+      dates="Jan 2023 - Apr 2023"
+      tech={["Kotlin", "Gradle", "JUnit"]}
+      link="https://github.com/CshCyberhawks/GoodNewsGoose"
+    >
+      As programming lead, I programmed a robot for the FIRST Robotics
+      Competition that had swerve drive, full odometry, dynamic autonomous mode,
+      and a PID controlled arm. This allowed it to compete at the highest
+      levels, earning it a spot in the world championships in Houston, Texas.
+    </ProjectCard>
+
+    <ProjectCard
+      name="MiniSteve"
+      link="https://github.com/CshCyberhawks/MiniSteve"
+      tech={["Java", "Gradle", "Robotics"]}
+      dates="Jan 2022 - Mar 2022"
+    >
+      As programming lead, I coded an FRC robot with a custom swerve drive
+      train, field orientation, PID controllers, full odometry, and a dynamic
+      autonomous mode. These advanced features provide precise control, accurate
+      tracking, and customizable movements for a strategic advantage during
       competitions.
     </ProjectCard>
   </div>
