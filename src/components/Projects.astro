@@ -1,13 +1,14 @@
 ---
 const projects = [
   {
-    id: "project-1",
-    title: "Project 1 Title",
+    id: "lua-obfuscator",
+    title: "Lua Obfuscator",
     previewImage: "/images/placeholder-preview.jpg",
-    shortDescription: "Brief description for the card view.",
-    techStack: ["Tech 1", "Tech 2", "Framework"],
+    shortDescription:
+      "I wrote a program that obfuscates Lua code. It allows you to release programs coded in Lua without distributing the source code. It can be used for Roblox games or any general purpose Lua applications.",
+    techStack: ["Rust", "Lua"],
     liveUrl: "#",
-    repoUrl: "#",
+    repoUrl: "https://github.com/PY44N/LuaObfuscatorV2",
   },
   {
     id: "project-2",
@@ -35,14 +36,17 @@ const projects = [
 
   .project-item {
     position: relative;
-    padding: 1.5rem 0;
-    transition: transform 0.2s ease;
+    padding: 0.8rem 0;
+    transition: transform 0.2s ease, border-left 0.2s ease;
     border-left: 2px solid transparent;
     padding-left: 0.75rem;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: space-between;
     gap: 1.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 3px;
+    margin-bottom: 0.75rem;
 
     &:hover {
       border-left: 2px solid #88ddff;
@@ -59,7 +63,7 @@ const projects = [
   }
 
   .project-item h3 {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     color: #ccd6f6;
     margin-bottom: 0.75rem;
   }
@@ -67,23 +71,23 @@ const projects = [
   .project-item p {
     color: #a8b2d1;
     margin-bottom: 1rem;
-    font-size: 1rem;
+    font-size: 0.95rem;
     max-width: 100%;
+    line-height: 1.4;
   }
 
   .project-preview {
-    width: 100px;
-    height: 100px;
-    min-width: 100px;
+    width: 90px;
+    height: 90px;
+    min-width: 90px;
     border-radius: 4px;
     object-fit: cover;
     box-shadow: 0 3px 12px rgba(0, 0, 0, 0.2);
     opacity: 0.8;
-    transition: opacity 0.2s ease, transform 0.2s ease;
+    transition: opacity 0.2s ease;
 
     .project-item:hover & {
       opacity: 1;
-      transform: scale(1.05);
     }
   }
 
@@ -105,19 +109,38 @@ const projects = [
 
   .project-links {
     margin-top: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
   }
 
   .project-links a {
     color: #88ddff;
-    margin-right: 1rem;
     text-decoration: none;
     font-size: 0.9rem;
-    transition: color 0.2s ease;
+    transition: color 0.2s ease, opacity 0.2s ease;
+    display: flex;
+    align-items: center;
 
     &:hover {
       color: #e6f1ff;
       text-decoration: underline;
     }
+  }
+
+  .project-links a[href*="github"] {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+
+    svg {
+      width: 24px;
+      height: 24px;
+      fill: currentColor;
+    }
+  }
+
+  .project-item:hover .project-links a[href*="github"] {
+    opacity: 1;
   }
 
   @media (max-width: 768px) {
@@ -172,8 +195,12 @@ const projects = [
                   href={project.repoUrl}
                   target="_blank"
                   rel="noopener noreferrer"
+                  aria-label="GitHub Repository"
+                  title="View GitHub Repository"
                 >
-                  GitHub Repo
+                  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.38.6.1.83-.26.83-.58 0-.28 0-1.03-.02-2.03-3.33.72-4.03-1.6-4.03-1.6-.55-1.4-1.34-1.77-1.34-1.77-1.08-.74.08-.73.08-.73 1.2.08 1.83 1.23 1.83 1.23 1.07 1.84 2.8 1.3 3.5 1 .1-.78.42-1.3.76-1.6-2.67-.3-5.47-1.34-5.47-5.93 0-1.3.47-2.38 1.24-3.22-.14-.3-.54-1.52.1-3.17 0 0 1-.32 3.3 1.23.96-.26 1.98-.4 3-.4 1.02 0 2.04.14 3 .4 2.28-1.55 3.3-1.23 3.3-1.23.64 1.65.24 2.85.1 3.17.77.84 1.24 1.9 1.24 3.22 0 4.6-2.8 5.63-5.48 5.92.42.36.81 1.1.81 2.2 0 1.6-.01 2.9-.01 3.3 0 .31.22.69.83.57C20.56 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12" />
+                  </svg>
                 </a>
               )}
             </div>
