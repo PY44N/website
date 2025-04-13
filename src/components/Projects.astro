@@ -1,51 +1,190 @@
+---
+const projects = [
+  {
+    id: "project-1",
+    title: "Project 1 Title",
+    previewImage: "/images/placeholder-preview.jpg",
+    shortDescription: "Brief description for the card view.",
+    techStack: ["Tech 1", "Tech 2", "Framework"],
+    liveUrl: "#",
+    repoUrl: "#",
+  },
+  {
+    id: "project-2",
+    title: "Project 2 Title",
+    previewImage: "/images/placeholder-preview.jpg",
+    shortDescription: "Another brief description for card view.",
+    techStack: ["Astro", "React", "Node.js"],
+    liveUrl: "#",
+    repoUrl: "#",
+  },
+];
+---
+
 <style lang="less">
   h2 {
     color: #e6f1ff;
-    margin-bottom: 1rem;
-  }
-
-  article {
     margin-bottom: 2rem;
-    padding-left: 1rem;
-    border-left: 2px solid #88ddff;
   }
 
-  article h3 {
-    font-size: 1.4rem;
+  .projects-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+  }
+
+  .project-item {
+    position: relative;
+    padding: 1.5rem 0;
+    transition: transform 0.2s ease;
+    border-left: 2px solid transparent;
+    padding-left: 0.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+
+    &:hover {
+      border-left: 2px solid #88ddff;
+      transform: translateX(3px);
+    }
+
+    &:not(:last-child) {
+      border-bottom: 1px solid rgba(136, 221, 255, 0.05);
+    }
+  }
+
+  .project-content {
+    flex: 1;
+  }
+
+  .project-item h3 {
+    font-size: 1.5rem;
     color: #ccd6f6;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.75rem;
   }
 
-  article p {
+  .project-item p {
     color: #a8b2d1;
     margin-bottom: 1rem;
+    font-size: 1rem;
+    max-width: 100%;
   }
 
-  article a {
+  .project-preview {
+    width: 100px;
+    height: 100px;
+    min-width: 100px;
+    border-radius: 4px;
+    object-fit: cover;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.2);
+    opacity: 0.8;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+
+    .project-item:hover & {
+      opacity: 1;
+      transform: scale(1.05);
+    }
+  }
+
+  .project-tech-stack {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    font-size: 0.8rem;
+    color: #88ddff; /* Accent color for tech */
+  }
+
+  .project-tech-stack li {
+    background-color: rgba(136, 221, 255, 0.1);
+    padding: 0.25rem 0.5rem;
+    border-radius: 3px;
+  }
+
+  .project-links {
+    margin-top: 0.5rem;
+  }
+
+  .project-links a {
     color: #88ddff;
-    margin-right: 0.5rem;
+    margin-right: 1rem;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.2s ease;
+
     &:hover {
+      color: #e6f1ff;
       text-decoration: underline;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .project-preview {
+      width: 80px;
+      height: 80px;
+      min-width: 80px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .project-item {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .project-preview {
+      order: -1;
+      width: 100%;
+      height: 150px;
+      margin-bottom: 1rem;
     }
   }
 </style>
 
 <section id="projects">
   <h2>Projects</h2>
-  <article>
-    <h3>Project 1 Title</h3>
-    <p>
-      Description of project 1. Highlight the problem it solves or the
-      technologies used. Built with [Tech Stack 1], [Tech Stack 2].
-    </p>
-    <a href="#">Live Demo</a> | <a href="#">GitHub Repo</a>
-  </article>
-  <article>
-    <h3>Project 2 Title</h3>
-    <p>
-      Description of project 2. Explain the key features and your role in its
-      development. Tech involved: [Tech 1], [Tech 2], [Framework].
-    </p>
-    <a href="#">Live Demo</a> | <a href="#">GitHub Repo</a>
-  </article>
+  <div class="projects-list">
+    {
+      projects.map((project) => (
+        <div class="project-item">
+          <div class="project-content">
+            <h3>{project.title}</h3>
+            <p>{project.shortDescription}</p>
+            <ul class="project-tech-stack">
+              {project.techStack.map((tech) => (
+                <li>{tech}</li>
+              ))}
+            </ul>
+            <div class="project-links">
+              {project.liveUrl !== "#" && (
+                <a
+                  href={project.liveUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Live Demo
+                </a>
+              )}
+              {project.repoUrl !== "#" && (
+                <a
+                  href={project.repoUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  GitHub Repo
+                </a>
+              )}
+            </div>
+          </div>
+          <img
+            class="project-preview"
+            src={project.previewImage}
+            alt={project.title}
+          />
+        </div>
+      ))
+    }
+  </div>
 </section>
