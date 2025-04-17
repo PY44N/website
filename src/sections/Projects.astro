@@ -9,15 +9,17 @@ const projects = [
     techStack: ["Rust", "Lua"],
     liveUrl: "#",
     repoUrl: "https://github.com/PY44N/LuaObfuscatorV2",
+    onshapeUrl: "#",
   },
   {
-    id: "project-2",
-    title: "Project 2 Title",
-    previewImage: "/images/placeholder-preview.jpg",
+    id: "atled",
+    title: "Atled",
+    previewImage: "/images/robot.jpg",
     shortDescription: "Another brief description for card view.",
-    techStack: ["Astro", "React", "Node.js"],
+    techStack: ["Kotlin", "Java", "CAD (Onshape)"],
     liveUrl: "#",
-    repoUrl: "#",
+    repoUrl: "https://github.com/CshCyberhawks/Atled",
+    onshapeUrl: "https://cad.onshape.com/documents/example",
   },
 ];
 ---
@@ -41,7 +43,7 @@ const projects = [
     border-left: 2px solid transparent;
     padding-left: 0.75rem;
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     justify-content: space-between;
     gap: 1.5rem;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -77,9 +79,9 @@ const projects = [
   }
 
   .project-preview {
-    width: 90px;
-    height: 90px;
-    min-width: 90px;
+    width: 120px;
+    height: 120px;
+    min-width: 120px;
     border-radius: 4px;
     object-fit: cover;
     box-shadow: 0 3px 12px rgba(0, 0, 0, 0.2);
@@ -98,7 +100,7 @@ const projects = [
     flex-wrap: wrap;
     gap: 0.5rem;
     font-size: 0.8rem;
-    color: #88ddff; /* Accent color for tech */
+    color: #88ddff;
   }
 
   .project-tech-stack li {
@@ -139,15 +141,35 @@ const projects = [
     }
   }
 
-  .project-item:hover .project-links a[href*="github"] {
+  .project-links a[href*="onshape"] {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+
+    img {
+      width: 24px;
+      height: 24px;
+      object-fit: contain;
+      opacity: 0.85;
+      filter: drop-shadow(0 0 1px rgba(136, 221, 255, 0.5));
+      transition: all 0.2s ease;
+    }
+
+    &:hover img {
+      opacity: 1;
+      filter: drop-shadow(0 0 2px rgba(230, 241, 255, 0.7));
+    }
+  }
+
+  .project-item:hover .project-links a[href*="github"],
+  .project-item:hover .project-links a[href*="onshape"] {
     opacity: 1;
   }
 
   @media (max-width: 768px) {
     .project-preview {
-      width: 80px;
-      height: 80px;
-      min-width: 80px;
+      width: 100px;
+      height: 100px;
+      min-width: 100px;
     }
   }
 
@@ -201,6 +223,22 @@ const projects = [
                   <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.38.6.1.83-.26.83-.58 0-.28 0-1.03-.02-2.03-3.33.72-4.03-1.6-4.03-1.6-.55-1.4-1.34-1.77-1.34-1.77-1.08-.74.08-.73.08-.73 1.2.08 1.83 1.23 1.83 1.23 1.07 1.84 2.8 1.3 3.5 1 .1-.78.42-1.3.76-1.6-2.67-.3-5.47-1.34-5.47-5.93 0-1.3.47-2.38 1.24-3.22-.14-.3-.54-1.52.1-3.17 0 0 1-.32 3.3 1.23.96-.26 1.98-.4 3-.4 1.02 0 2.04.14 3 .4 2.28-1.55 3.3-1.23 3.3-1.23.64 1.65.24 2.85.1 3.17.77.84 1.24 1.9 1.24 3.22 0 4.6-2.8 5.63-5.48 5.92.42.36.81 1.1.81 2.2 0 1.6-.01 2.9-.01 3.3 0 .31.22.69.83.57C20.56 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12" />
                   </svg>
+                </a>
+              )}
+              {project.onshapeUrl !== "#" && project.onshapeUrl && (
+                <a
+                  href={project.onshapeUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Onshape CAD Model"
+                  title="View Onshape CAD Model"
+                >
+                  <img
+                    src="/images/onshape.png"
+                    alt="Onshape Logo"
+                    width="24"
+                    height="24"
+                  />
                 </a>
               )}
             </div>
