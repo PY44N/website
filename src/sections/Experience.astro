@@ -13,11 +13,38 @@
     background-color: #0a192f; /* Match main background color */
     transition: background-color 0.3s ease, transform 0.3s ease,
       border-color 0.3s ease;
+    position: relative;
 
     &:hover {
       background-color: #112240; /* Use the slightly lighter color on hover */
       transform: translateY(-5px);
       text-decoration: none;
+
+      .link-icon {
+        opacity: 1;
+        transform: translate(0, 0);
+      }
+    }
+
+    .link-icon {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      width: 20px;
+      height: 20px;
+      opacity: 0;
+      transform: translate(5px, -5px);
+      transition: opacity 0.3s ease, transform 0.3s ease;
+
+      svg {
+        width: 100%;
+        height: 100%;
+        fill: none;
+        stroke: #88ddff;
+        stroke-width: 2;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
     }
   }
 
@@ -49,11 +76,19 @@
 
 <section id="experience">
   <h2>Experience</h2>
-  <a href="#" class="experience-link">
+  <a href="http://irl.cs.brown.edu/" target="_blank" class="experience-link">
+    <div class="link-icon">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
+        ></path>
+        <polyline points="15 3 21 3 21 9"></polyline>
+        <line x1="10" y1="14" x2="21" y2="3"></line>
+      </svg>
+    </div>
     <article>
       <!-- TODO Not sure researcher is the title I should be using -->
       <h3>Researcher @ Brown University Intelligent Robot Lab</h3>
-      <p class="date-range">August 2023 - Present</p>
+      <p class="date-range">Aug 2023 - Present</p>
       <p>
         Designed and implemented a Visual-Language Model (VLM) to translate
         task-based videos into Object-Level Planning (OLP) data to enable robot
@@ -61,10 +96,22 @@
       </p>
     </article>
   </a>
-  <a href="#" class="experience-link">
+  <a
+    href="https://www.northwell.edu/3d-design-innovation"
+    target="_blank"
+    class="experience-link"
+  >
+    <div class="link-icon">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
+        ></path>
+        <polyline points="15 3 21 3 21 9"></polyline>
+        <line x1="10" y1="14" x2="21" y2="3"></line>
+      </svg>
+    </div>
     <article>
       <h3>Researcher @ Northwell Health, 3D Design and Innovation Lab</h3>
-      <p class="date-range">[Start Date] - [End Date]</p>
+      <p class="date-range">Sep 2022 - Present</p>
       <p>
         Developed an application for Northwell Health that will be used to track
         the level of oxygen in the portable tanks used for patient transport
