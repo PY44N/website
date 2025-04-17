@@ -16,6 +16,12 @@
   animation: @arguments;
 }
 
+// Class for elements that haven't animated yet
+.pre-animation {
+  opacity: 0;
+  will-change: opacity, transform;
+}
+
 .enter-bottom {
   .keyframes(enter-bottom;{
 		0% {

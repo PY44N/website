@@ -1,0 +1,42 @@
+---
+// Client-side only component to load scroll animations
+---
+
+<script is:inline>
+  document.addEventListener("DOMContentLoaded", () => {
+    const animatedElements = document.querySelectorAll(".animate-on-scroll");
+
+    if ("IntersectionObserver" in window) {
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            // When element enters viewport
+            if (entry.isIntersecting) {
+              // Get animation classes from data attribute
+              const animationClasses =
+                entry.target.dataset.animation.split(" ");
+              // Add animation classes
+              entry.target.classList.add(...animationClasses);
+              // Stop observing after animation is triggered
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        {
+          threshold: 0.1,
+          rootMargin: "0px 0px -50px 0px",
+        }
+      );
+
+      animatedElements.forEach((element) => {
+        element.classList.add("pre-animation");
+        observer.observe(element);
+      });
+    } else {
+      animatedElements.forEach((element) => {
+        const animationClasses = element.dataset.animation.split(" ");
+        element.classList.add(...animationClasses);
+      });
+    }
+  });
+</script>

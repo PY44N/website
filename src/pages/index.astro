@@ -6,6 +6,7 @@ import Experience from "../sections/Experience.astro";
 import Projects from "../sections/Projects.astro";
 import Contact from "../sections/Contact.astro";
 import Footer from "../sections/Footer.astro";
+import ScrollAnimations from "../components/ScrollAnimations.astro";
 
 import "@fontsource/open-sans";
 import "../styles/global.less";
@@ -112,7 +113,8 @@ import "../styles/global.less";
         target="_blank"
         rel="noopener noreferrer"
         aria-label="GitHub"
-        class="enter-left stagger-delay-1"
+        class="animate-on-scroll"
+        data-animation="enter-left stagger-delay-1"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -136,7 +138,8 @@ import "../styles/global.less";
         target="_blank"
         rel="noopener noreferrer"
         aria-label="LinkedIn"
-        class="enter-left stagger-delay-2"
+        class="animate-on-scroll"
+        data-animation="enter-left stagger-delay-2"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -161,7 +164,8 @@ import "../styles/global.less";
         href="mailto:ryan@kennasmith.com"
         rel="noopener noreferrer"
         aria-label="Email"
-        class="enter-left stagger-delay-3"
+        class="animate-on-scroll"
+        data-animation="enter-left stagger-delay-3"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -191,5 +195,6 @@ import "../styles/global.less";
     </main>
 
     <Footer />
+    <ScrollAnimations />
   </body>
 </html>

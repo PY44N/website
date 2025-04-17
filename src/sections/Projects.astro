@@ -192,7 +192,7 @@ const projects = [
   <div class="projects-list">
     {
       projects.map((project, index) => (
-        <div class={`project-item scale-in stagger-delay-${index + 1}`}>
+        <div class="project-item animate-on-scroll" data-animation="scale-in">
           <div class="project-content">
             <h3>{project.title}</h3>
             <p>{project.shortDescription}</p>
