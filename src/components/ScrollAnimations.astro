@@ -1,5 +1,4 @@
 ---
-// Client-side only component to load scroll animations
 ---
 
 <script is:inline>
@@ -10,14 +9,10 @@
       const observer = new IntersectionObserver(
         (entries) => {
           entries.forEach((entry) => {
-            // When element enters viewport
             if (entry.isIntersecting) {
-              // Get animation classes from data attribute
               const animationClasses =
                 entry.target.dataset.animation.split(" ");
-              // Add animation classes
               entry.target.classList.add(...animationClasses);
-              // Stop observing after animation is triggered
               observer.unobserve(entry.target);
             }
           });
