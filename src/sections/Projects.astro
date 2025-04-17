@@ -188,11 +188,11 @@ const projects = [
 </style>
 
 <section id="projects">
-  <h2>Projects</h2>
+  <h2 class="enter-left">Projects</h2>
   <div class="projects-list">
     {
-      projects.map((project) => (
-        <div class="project-item">
+      projects.map((project, index) => (
+        <div class={`project-item scale-in stagger-delay-${index + 1}`}>
           <div class="project-content">
             <h3>{project.title}</h3>
             <p>{project.shortDescription}</p>
