@@ -1,3 +1,3 @@
-# Website
+# Website V1
 
-My portfolio website written with Astro and Less
+Old version of my portfolio website. Visible on [v1.rks.gg](https://v1.rks.gg/)
