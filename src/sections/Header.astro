@@ -89,9 +89,16 @@
       content: "";
       display: block;
       width: 1px;
-      height: 90px;
+      height: 0;
       margin: 0.75rem auto 0;
       background-color: #a8b2d1;
+      transition: height 0.3s ease;
+      animation: growLine 0.5s ease forwards 0.9s;
+    }
+    
+    @keyframes growLine {
+      from { height: 0; }
+      to { height: 90px; }
     }
 
     a {
