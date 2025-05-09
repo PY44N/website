@@ -2,7 +2,7 @@
 const projects = [
   {
     title: "Lua Obfuscator",
-    previewImage: "/images/placeholder-preview.jpg",
+    previewImage: "/images/obfuscator.png",
     shortDescription:
       "I wrote a program that obfuscates Lua code. It allows you to release programs coded in Lua without distributing the source code. It can be used for Roblox games or any general purpose Lua applications.",
     techStack: ["Rust", "Lua"],
@@ -23,7 +23,7 @@ const projects = [
   },
   {
     title: "Portfolio Webite",
-    previewImage: "/images/placeholder-preview.jpg",
+    previewImage: "/images/website.png",
     shortDescription:
       "I developed this website using Astro and Less, creating a fully responsive design and implementing SEO best practices for improved visibility on search engines.",
     techStack: ["Astro", "Less"],
@@ -153,7 +153,9 @@ const projects = [
       fill: currentColor;
     }
 
-    &:hover, &:active, &:focus {
+    &:hover,
+    &:active,
+    &:focus {
       opacity: 1;
       transform: translateY(0);
     }
@@ -177,12 +179,16 @@ const projects = [
       transition: all 0.3s ease;
     }
 
-    &:hover, &:active, &:focus {
+    &:hover,
+    &:active,
+    &:focus {
       opacity: 1;
       transform: translateY(0);
     }
 
-    &:hover img, &:active img, &:focus img {
+    &:hover img,
+    &:active img,
+    &:focus img {
       opacity: 1;
       filter: drop-shadow(0 0 2px rgba(230, 241, 255, 0.7));
     }
@@ -224,14 +230,14 @@ const projects = [
       margin-bottom: 1rem;
     }
   }
-  
+
   .archive-button-container {
     display: flex;
     justify-content: center;
     margin-top: 1rem;
     margin-bottom: 3rem;
   }
-  
+
   .archive-button {
     display: flex;
     align-items: center;
@@ -245,17 +251,17 @@ const projects = [
     text-decoration: none;
     transition: all 0.3s ease;
   }
-  
+
   .archive-button:hover {
     background-color: rgba(136, 221, 255, 0.1);
     transform: translateY(-2px);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   }
-  
+
   .archive-button svg {
     transition: transform 0.2s ease;
   }
-  
+
   .archive-button:hover svg {
     transform: translateX(4px);
   }
@@ -326,9 +332,23 @@ const projects = [
     }
   </div>
   <div class="archive-button-container">
-    <a href="/archive" class="archive-button animate-on-scroll" data-animation="fade-in">
+    <a
+      href="/archive"
+      class="archive-button animate-on-scroll"
+      data-animation="fade-in"
+    >
       View All Projects
-      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
         <line x1="5" y1="12" x2="19" y2="12"></line>
         <polyline points="12 5 19 12 12 19"></polyline>
       </svg>
