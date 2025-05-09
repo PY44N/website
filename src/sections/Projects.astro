@@ -140,7 +140,12 @@ const projects = [
 
   .project-links a[href*="github"] {
     opacity: 0.7;
-    transition: opacity 0.3s ease;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+
+    @media (min-width: 769px) {
+      transform: translateY(10px);
+      opacity: 0;
+    }
 
     svg {
       width: 24px;
@@ -150,12 +155,18 @@ const projects = [
 
     &:hover, &:active, &:focus {
       opacity: 1;
+      transform: translateY(0);
     }
   }
 
   .project-links a[href*="onshape"] {
     opacity: 0.7;
-    transition: opacity 0.3s ease;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+
+    @media (min-width: 769px) {
+      transform: translateY(10px);
+      opacity: 0;
+    }
 
     img {
       width: 24px;
@@ -168,6 +179,7 @@ const projects = [
 
     &:hover, &:active, &:focus {
       opacity: 1;
+      transform: translateY(0);
     }
 
     &:hover img, &:active img, &:focus img {
@@ -183,10 +195,12 @@ const projects = [
     }
   }
 
-  .project-item:hover .project-links a[href*="github"],
-  .project-item:hover .project-links a[href*="onshape"] {
-    opacity: 1;
-    transform: translate(0, 0);
+  @media (min-width: 769px) {
+    .project-item:hover .project-links a[href*="github"],
+    .project-item:hover .project-links a[href*="onshape"] {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 
   @media (max-width: 768px) {
