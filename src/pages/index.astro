@@ -1,17 +1,66 @@
 ---
-import Top from "../components/sections/Top.astro";
-import Header from "../components/Header.astro";
-import ParticleRenderer from "../components/ParticleRenderer.svelte";
-import Projects from "../components/sections/Projects.astro";
 import SEO from "../components/SEO.astro";
+import Header from "../sections/Header.astro";
+import About from "../sections/About.astro";
+import Experience from "../sections/Experience.astro";
+import Projects from "../sections/Projects.astro";
+import Contact from "../sections/Contact.astro";
+import Footer from "../sections/Footer.astro";
+import ScrollAnimations from "../components/ScrollAnimations.astro";
 
 import "@fontsource/open-sans";
 import "../styles/global.less";
 ---
 
 <style lang="less">
-  h1 {
-    color: #a9def9;
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    font-family: "Open Sans", sans-serif;
+    line-height: 1.6;
+    background-color: #0a192f;
+    color: #ccd6f6;
+  }
+
+  h1,
+  h2,
+  h3 {
+    color: #e6f1ff;
+    margin-bottom: 1rem;
+  }
+
+  p {
+    color: #a8b2d1;
+    margin-bottom: 1rem;
+  }
+
+  a {
+    color: #88ddff;
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  main {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  section {
+    padding: 2rem 0;
+    margin-bottom: 2rem;
+  }
+
+  section h2 {
+    font-size: 1.8rem;
+    position: relative;
+    padding-bottom: 0.5rem;
   }
 </style>
 
@@ -19,15 +68,21 @@ import "../styles/global.less";
   <head>
     <SEO
       title="Ryan Smith's Portfolio"
-      description="Ryan Smith is a student developer who occasionally makes cool things"
-      permalink="https://www.pyan.xyz/"
+      description=""
+      permalink="https://www.ryankennasmith.com/"
     />
   </head>
   <body>
-    <ParticleRenderer client:load />
-
     <Header />
-    <Top />
-    <Projects />
+
+    <main>
+      <About />
+      <Experience />
+      <Projects />
+      <Contact />
+    </main>
+
+    <Footer />
+    <ScrollAnimations />
   </body>
 </html>

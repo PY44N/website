@@ -1,0 +1,34 @@
+---
+---
+
+<style>
+  .page-content {
+    animation: none;
+    opacity: 1;
+  }
+</style>
+
+<div class="page-content">
+  <slot />
+</div>
+
+<script is:inline>
+  // Prevent animation flashing
+  document.addEventListener("DOMContentLoaded", () => {
+    localStorage.setItem("siteVisited", "true");
+
+    // ake all animated elements visible immediately
+    if (localStorage.getItem("siteVisited") === "true") {
+      document.querySelectorAll(".animate-on-scroll").forEach((element) => {
+        element.style.opacity = "1";
+        element.style.transform = "none";
+        element.style.transition = "none";
+
+        if (element.dataset.animation) {
+          const classes = element.dataset.animation.split(" ");
+          element.classList.remove("pre-animation");
+        }
+      });
+    }
+  });
+</script>

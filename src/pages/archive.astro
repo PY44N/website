@@ -1,0 +1,265 @@
+<!-- ---
+import SEO from "../components/SEO.astro";
+import Header from "../sections/Header.astro";
+import Footer from "../sections/Footer.astro";
+import ScrollAnimations from "../components/ScrollAnimations.astro";
+
+import "@fontsource/open-sans";
+import "../styles/global.less";
+
+const archivedProjects = [
+  {
+    title: "Weather App",
+    year: "2023",
+    shortDescription:
+      "A simple weather application built with React that uses the OpenWeatherMap API.",
+    techStack: ["React", "JavaScript", "CSS"],
+    repoUrl: "#",
+  },
+  {
+    title: "Task Manager CLI",
+    year: "2022",
+    shortDescription:
+      "A command-line task management tool built with Rust for tracking personal projects and deadlines.",
+    techStack: ["Rust", "CLI"],
+    repoUrl: "#",
+  },
+  {
+    title: "Blog Platform",
+    year: "2022",
+    shortDescription:
+      "A minimal blogging platform with markdown support and user authentication.",
+    techStack: ["Node.js", "Express", "MongoDB"],
+    repoUrl: "#",
+  },
+  {
+    title: "Image Gallery",
+    year: "2021",
+    shortDescription:
+      "A responsive image gallery with lazy loading and filtering capabilities.",
+    techStack: ["HTML", "CSS", "JavaScript"],
+    repoUrl: "#",
+  },
+];
+---
+
+<style lang="less">
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    font-family: "Open Sans", sans-serif;
+    line-height: 1.6;
+    background-color: #0a192f;
+    color: #ccd6f6;
+  }
+
+  h1,
+  h2,
+  h3 {
+    color: #e6f1ff;
+    margin-bottom: 1rem;
+  }
+
+  p {
+    color: #a8b2d1;
+    margin-bottom: 1rem;
+  }
+
+  a {
+    color: #88ddff;
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  main {
+    max-width: 1000px;
+    margin: 2rem auto;
+    padding: 0 2rem;
+  }
+
+  .archive-section {
+    padding: 3rem 0;
+    margin-bottom: 2rem;
+  }
+
+  .archive-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+  }
+
+  .back-link {
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: transform 0.2s ease;
+
+    &:hover {
+      transform: translateX(-5px);
+    }
+  }
+
+  .archive-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .archive-item {
+    padding: 1rem;
+    border-radius: 5px;
+    background-color: rgba(35, 53, 84, 0.4);
+    border: 1px solid rgba(136, 221, 255, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px -10px rgba(0, 0, 0, 0.3);
+      border-color: rgba(136, 221, 255, 0.3);
+    }
+  }
+
+  .archive-item-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+  }
+
+  .archive-item h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .archive-item-year {
+    font-size: 0.8rem;
+    color: #88ddff;
+    padding: 0.2rem 0.5rem;
+    background-color: rgba(136, 221, 255, 0.1);
+    border-radius: 3px;
+  }
+
+  .archive-item p {
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+  }
+
+  .archive-tech-stack {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    font-size: 0.75rem;
+    margin-bottom: 1rem;
+  }
+
+  .archive-tech-stack li {
+    background-color: rgba(136, 221, 255, 0.1);
+    padding: 0.2rem 0.4rem;
+    border-radius: 3px;
+    color: #88ddff;
+  }
+
+  .archive-item-link {
+    text-align: right;
+    font-size: 0.85rem;
+  }
+
+  @media (max-width: 768px) {
+    .archive-grid {
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
+  }
+
+  @media (max-width: 480px) {
+    .archive-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+
+<html lang="en">
+  <head>
+    <SEO
+      title="Project Archive - Ryan Smith's Portfolio"
+      description="Archive of past projects"
+      permalink="https://www.ryankennasmith.com/archive"
+    />
+  </head>
+  <body>
+    <Header />
+
+    <main>
+      <section class="archive-section">
+        <div class="archive-header">
+          <h2 class="enter-left">Project Archive</h2>
+          <a
+            href="/"
+            class="back-link animate-on-scroll"
+            data-animation="enter-right"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="18"
+              height="18"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M19 12H5M12 19l-7-7 7-7"></path>
+            </svg>
+            Back to main portfolio
+          </a>
+        </div>
+
+        <div class="archive-grid">
+          {
+            archivedProjects.map((project, index) => (
+              <div
+                class="archive-item animate-on-scroll"
+                data-animation="fade-in stagger-delay-{index}"
+              >
+                <div class="archive-item-header">
+                  <h3>{project.title}</h3>
+                  <span class="archive-item-year">{project.year}</span>
+                </div>
+                <p>{project.shortDescription}</p>
+                <ul class="archive-tech-stack">
+                  {project.techStack.map((tech) => (
+                    <li>{tech}</li>
+                  ))}
+                </ul>
+                {project.repoUrl !== "#" && (
+                  <div class="archive-item-link">
+                    <a
+                      href={project.repoUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      View Project →
+                    </a>
+                  </div>
+                )}
+              </div>
+            ))
+          }
+        </div>
+      </section>
+    </main>
+
+    <Footer />
+    <ScrollAnimations />
+  </body>
+</html> -->

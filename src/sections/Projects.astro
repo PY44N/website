@@ -1,0 +1,357 @@
+---
+const projects = [
+  {
+    title: "Lua Obfuscator",
+    previewImage: "/images/obfuscator.png",
+    shortDescription:
+      "I wrote a program that obfuscates Lua code. It allows you to release programs coded in Lua without distributing the source code. It can be used for Roblox games or any general purpose Lua applications.",
+    techStack: ["Rust", "Lua"],
+    liveUrl: "#",
+    repoUrl: "https://github.com/PY44N/LuaObfuscatorV2",
+    onshapeUrl: "#",
+  },
+  {
+    title: "Atled",
+    previewImage: "/images/robot.jpg",
+    shortDescription:
+      "As programming lead and team captain, I helped to design and program a FRC robot complete with swerve drive, full odometry, dynamic autonomous modes, and dynamic trajectory calculations to automatically align and score.",
+    techStack: ["Kotlin", "Java", "CAD (Onshape)"],
+    liveUrl: "#",
+    repoUrl: "https://github.com/CshCyberhawks/Atled",
+    onshapeUrl:
+      "https://cad.onshape.com/documents/2520e632a18bca0856afc4a2/w/071468e19b137d327c83f82a/e/2816bc31da9c652e4724e480",
+  },
+  {
+    title: "Portfolio Webite",
+    previewImage: "/images/website.png",
+    shortDescription:
+      "I developed this website using Astro and Less, creating a fully responsive design and implementing SEO best practices for improved visibility on search engines.",
+    techStack: ["Astro", "Less"],
+    liveUrl: "#",
+    repoUrl: "https://github.com/PY44N/website",
+    onshapeUrl: "#",
+  },
+];
+---
+
+<style lang="less">
+  h2 {
+    color: #e6f1ff;
+    margin-bottom: 2rem;
+    margin-top: 3rem;
+  }
+
+  .projects-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .project-item {
+    position: relative;
+    padding: 0.25rem 1.5rem 1.15rem 1.25rem;
+    transition: background-color 0.3s ease, transform 0.3s ease,
+      border-left 0.2s ease;
+    border-left: 2px solid transparent;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    border-radius: 5px;
+    margin-bottom: 2rem;
+    background-color: #0a192f;
+
+    &:hover {
+      background-color: #112240;
+      border-left: 2px solid #88ddff;
+      transform: translateX(8px);
+    }
+  }
+
+  .project-content {
+    flex: 1;
+  }
+
+  .project-item h3 {
+    font-size: 1.4rem;
+    color: #ccd6f6;
+    margin-bottom: 0.75rem;
+  }
+
+  .project-item p {
+    color: #a8b2d1;
+    margin-bottom: 1rem;
+    font-size: 0.95rem;
+    max-width: 100%;
+    line-height: 1.4;
+  }
+
+  .project-preview {
+    width: 120px;
+    height: 120px;
+    min-width: 120px;
+    border-radius: 4px;
+    object-fit: cover;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.2);
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+
+    .project-item:hover & {
+      opacity: 1;
+    }
+  }
+
+  .project-tech-stack {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    font-size: 0.8rem;
+    color: #88ddff;
+  }
+
+  .project-tech-stack li {
+    background-color: rgba(136, 221, 255, 0.1);
+    padding: 0.25rem 0.5rem;
+    border-radius: 3px;
+  }
+
+  .project-links {
+    margin-top: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .project-links a {
+    color: #88ddff;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.3s ease, opacity 0.3s ease;
+    display: flex;
+    align-items: center;
+
+    &:hover {
+      color: #e6f1ff;
+      text-decoration: underline;
+    }
+  }
+
+  .project-links a[href*="github"] {
+    opacity: 0.7;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+
+    @media (min-width: 769px) {
+      transform: translateY(10px);
+      opacity: 0;
+    }
+
+    svg {
+      width: 24px;
+      height: 24px;
+      fill: currentColor;
+    }
+
+    &:hover,
+    &:active,
+    &:focus {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .project-links a[href*="onshape"] {
+    opacity: 0.7;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+
+    @media (min-width: 769px) {
+      transform: translateY(10px);
+      opacity: 0;
+    }
+
+    img {
+      width: 24px;
+      height: 24px;
+      object-fit: contain;
+      opacity: 0.85;
+      filter: drop-shadow(0 0 1px rgba(136, 221, 255, 0.5));
+      transition: all 0.3s ease;
+    }
+
+    &:hover,
+    &:active,
+    &:focus {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    &:hover img,
+    &:active img,
+    &:focus img {
+      opacity: 1;
+      filter: drop-shadow(0 0 2px rgba(230, 241, 255, 0.7));
+    }
+  }
+
+  @media (max-width: 768px) {
+    .project-links a[href*="github"],
+    .project-links a[href*="onshape"] {
+      opacity: 1;
+    }
+  }
+
+  @media (min-width: 769px) {
+    .project-item:hover .project-links a[href*="github"],
+    .project-item:hover .project-links a[href*="onshape"] {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .project-preview {
+      width: 100px;
+      height: 100px;
+      min-width: 100px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .project-item {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .project-preview {
+      order: -1;
+      width: 100%;
+      height: 150px;
+      margin-bottom: 1rem;
+    }
+  }
+
+  .archive-button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+    margin-bottom: 3rem;
+  }
+
+  .archive-button {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: transparent;
+    color: #88ddff;
+    border: 1px solid #88ddff;
+    border-radius: 4px;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+
+  .archive-button:hover {
+    background-color: rgba(136, 221, 255, 0.1);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+
+  .archive-button svg {
+    transition: transform 0.2s ease;
+  }
+
+  .archive-button:hover svg {
+    transform: translateX(4px);
+  }
+</style>
+
+<section id="projects">
+  <h2 class="enter-left">Projects</h2>
+  <div class="projects-list">
+    {
+      projects.map((project, index) => (
+        <div class="project-item animate-on-scroll" data-animation="scale-in">
+          <div class="project-content">
+            <h3>{project.title}</h3>
+            <p>{project.shortDescription}</p>
+            <ul class="project-tech-stack">
+              {project.techStack.map((tech) => (
+                <li>{tech}</li>
+              ))}
+            </ul>
+            <div class="project-links">
+              {project.liveUrl !== "#" && (
+                <a
+                  href={project.liveUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Live Demo
+                </a>
+              )}
+              {project.repoUrl !== "#" && (
+                <a
+                  href={project.repoUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="GitHub Repository"
+                  title="View GitHub Repository"
+                >
+                  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.38.6.1.83-.26.83-.58 0-.28 0-1.03-.02-2.03-3.33.72-4.03-1.6-4.03-1.6-.55-1.4-1.34-1.77-1.34-1.77-1.08-.74.08-.73.08-.73 1.2.08 1.83 1.23 1.83 1.23 1.07 1.84 2.8 1.3 3.5 1 .1-.78.42-1.3.76-1.6-2.67-.3-5.47-1.34-5.47-5.93 0-1.3.47-2.38 1.24-3.22-.14-.3-.54-1.52.1-3.17 0 0 1-.32 3.3 1.23.96-.26 1.98-.4 3-.4 1.02 0 2.04.14 3 .4 2.28-1.55 3.3-1.23 3.3-1.23.64 1.65.24 2.85.1 3.17.77.84 1.24 1.9 1.24 3.22 0 4.6-2.8 5.63-5.48 5.92.42.36.81 1.1.81 2.2 0 1.6-.01 2.9-.01 3.3 0 .31.22.69.83.57C20.56 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12" />
+                  </svg>
+                </a>
+              )}
+              {project.onshapeUrl !== "#" && project.onshapeUrl && (
+                <a
+                  href={project.onshapeUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Onshape CAD Model"
+                  title="View Onshape CAD Model"
+                >
+                  <img
+                    src="/images/onshape.png"
+                    alt="Onshape Logo"
+                    width="24"
+                    height="24"
+                  />
+                </a>
+              )}
+            </div>
+          </div>
+          <img
+            class="project-preview"
+            src={project.previewImage}
+            alt={project.title}
+          />
+        </div>
+      ))
+    }
+  </div>
+  <!-- <div class="archive-button-container">
+    <a
+      href="/archive"
+      class="archive-button animate-on-scroll"
+      data-animation="fade-in"
+    >
+      View All Projects
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <line x1="5" y1="12" x2="19" y2="12"></line>
+        <polyline points="12 5 19 12 12 19"></polyline>
+      </svg>
+    </a>
+  </div> -->
+</section>

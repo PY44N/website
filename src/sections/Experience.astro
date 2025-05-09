@@ -1,0 +1,215 @@
+---
+---
+
+<style lang="less">
+  h2 {
+    color: #e6f1ff;
+    margin-bottom: 1rem;
+    margin-top: 3rem;
+  }
+
+  a.experience-link {
+    display: block;
+    text-decoration: none;
+    margin-bottom: 2rem;
+    padding: 1.5rem 1.5rem 1.5rem 1.25rem;
+    border-radius: 5px;
+    background-color: #0a192f;
+    transition: background-color 0.3s ease, transform 0.3s ease,
+      border-color 0.3s ease, border-left 0.2s ease;
+    position: relative;
+    border-left: 2px solid transparent;
+    // box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+    &:hover {
+      background-color: #112240;
+      transform: translateX(8px);
+      text-decoration: none;
+      border-left: 2px solid #88ddff;
+
+      .link-icon {
+        opacity: 1;
+        transform: translate(0, 0);
+      }
+    }
+
+    .link-icon {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      width: 20px;
+      height: 20px;
+      opacity: 0;
+      transform: translate(5px, -5px);
+      transition: opacity 0.3s ease, transform 0.3s ease;
+
+      svg {
+        width: 100%;
+        height: 100%;
+        fill: none;
+        stroke: #88ddff;
+        stroke-width: 2;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+
+      @media (max-width: 768px) {
+        opacity: 0.7;
+        transform: none;
+      }
+    }
+  }
+
+  a.experience-link article {
+    margin-bottom: 0;
+    padding-left: 0;
+    border-left: none;
+  }
+
+  a.experience-link h3 {
+    font-size: 1.4rem;
+    color: #ccd6f6;
+    margin-bottom: 0.25rem; /* Reduced space below title */
+  }
+
+  a.experience-link p {
+    color: #a8b2d1;
+    margin-bottom: 1rem;
+  }
+
+  a.experience-link .date-range {
+    font-size: 0.85rem;
+    color: #88ddff; /* Accent color */
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.75rem;
+  }
+</style>
+
+<section id="experience">
+  <h2 class="enter-left">Experience</h2>
+  <a
+    href="http://irl.cs.brown.edu/"
+    target="_blank"
+    class="experience-link animate-on-scroll"
+    data-animation="scale-in"
+  >
+    <div class="link-icon">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
+        ></path>
+        <polyline points="15 3 21 3 21 9"></polyline>
+        <line x1="10" y1="14" x2="21" y2="3"></line>
+      </svg>
+    </div>
+    <article>
+      <h3>Lab Member @ Brown University Intelligent Robot Lab</h3>
+      <p class="date-range">Aug 2023 - Present</p>
+      <p>
+        Leading project to design and implement a Visual-Language Model (VLM) to
+        translate task-based videos into Object-Level Planning (OLP) data to
+        enable robot training based on video tutorials, independent of robot
+        type; first author on upcoming publication
+      </p>
+    </article>
+  </a>
+  <a
+    href="https://www.northwell.edu/3d-design-innovation"
+    target="_blank"
+    class="experience-link animate-on-scroll"
+    data-animation="scale-in"
+  >
+    <div class="link-icon">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
+        ></path>
+        <polyline points="15 3 21 3 21 9"></polyline>
+        <line x1="10" y1="14" x2="21" y2="3"></line>
+      </svg>
+    </div>
+    <article>
+      <h3>Researcher @ Northwell Health 3D Design and Innovation Lab</h3>
+      <p class="date-range">Sep 2022 - Present</p>
+      <p>
+        Developed an application that will be used to track the level of oxygen
+        in the portable tanks used for patient transport, and is currently being
+        evaluated for use in the health system; used computer numerical control
+        (CNC) milling to fabricate cartilage grafts for surgical reconstruction;
+        first author on a scientific abstract presented at national meeting
+      </p>
+    </article>
+  </a>
+  <a
+    href="https://lemelson.mit.edu/teams/cold-spring-harbor-juniorsenior-inventeam"
+    target="_blank"
+    class="experience-link animate-on-scroll"
+    data-animation="scale-in"
+  >
+    <div class="link-icon">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
+        ></path>
+        <polyline points="15 3 21 3 21 9"></polyline>
+        <line x1="10" y1="14" x2="21" y2="3"></line>
+      </svg>
+    </div>
+    <article>
+      <h3>Founder & Team President @ CSH Lemelson-MIT InvenTeam</h3>
+      <p class="date-range">May 2023 - Present</p>
+      <p>
+        Leader of one of eight teams in the nation selected for $7,500 research
+        grant and only team to win Microsoft Make What's Next grant; using 3D
+        printing and CAD to create a cost-effective, environmentally friendly,
+        scalable solution to tick mitigation; presented prototype at MIT in June
+        2024 at MIT.
+      </p>
+    </article>
+  </a>
+  <a
+    href="https://www.ttm.com/en"
+    target="_blank"
+    class="experience-link animate-on-scroll"
+    data-animation="scale-in"
+  >
+    <div class="link-icon">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
+        ></path>
+        <polyline points="15 3 21 3 21 9"></polyline>
+        <line x1="10" y1="14" x2="21" y2="3"></line>
+      </svg>
+    </div>
+    <article>
+      <h3>Summer Research Intern @ TTM Technologies</h3>
+      <p class="date-range">July 2024</p>
+      <p>
+        Selected for paid internship as one of 12 high school interns at top-5
+        global printed circuit board manufacturer
+      </p>
+    </article>
+  </a>
+  <a
+    href="https://www.congressionalappchallenge.us/"
+    target="_blank"
+    class="experience-link animate-on-scroll"
+    data-animation="scale-in"
+  >
+    <div class="link-icon">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
+        ></path>
+        <polyline points="15 3 21 3 21 9"></polyline>
+        <line x1="10" y1="14" x2="21" y2="3"></line>
+      </svg>
+    </div>
+    <article>
+      <h3>Congressional App Challenge Winner</h3>
+      <p class="date-range">Sep 2023 - Apr 2024</p>
+      <p>
+        Winner of 2023 National Congressional App Challenge (NY01); developed an
+        app to address water quality issues; presented to members of Congress in
+        Washington D.C. in April 2024
+      </p>
+    </article>
+  </a>
+</section>

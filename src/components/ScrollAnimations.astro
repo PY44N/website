@@ -1,0 +1,37 @@
+---
+---
+
+<script is:inline>
+  document.addEventListener("DOMContentLoaded", () => {
+    const animatedElements = document.querySelectorAll(".animate-on-scroll");
+
+    if ("IntersectionObserver" in window) {
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              const animationClasses =
+                entry.target.dataset.animation.split(" ");
+              entry.target.classList.add(...animationClasses);
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        {
+          threshold: 0.1,
+          rootMargin: "0px 0px -50px 0px",
+        }
+      );
+
+      animatedElements.forEach((element) => {
+        element.classList.add("pre-animation");
+        observer.observe(element);
+      });
+    } else {
+      animatedElements.forEach((element) => {
+        const animationClasses = element.dataset.animation.split(" ");
+        element.classList.add(...animationClasses);
+      });
+    }
+  });
+</script>
