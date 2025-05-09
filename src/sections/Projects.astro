@@ -37,36 +37,33 @@ const projects = [
 <style lang="less">
   h2 {
     color: #e6f1ff;
-    margin-bottom: 2rem;
+    margin-bottom: 3rem;
   }
 
   .projects-list {
     display: flex;
     flex-direction: column;
-    gap: 2.5rem;
+    gap: 0.5rem;
   }
 
   .project-item {
     position: relative;
-    padding: 0.8rem 0;
-    transition: transform 0.2s ease, border-left 0.2s ease;
+    padding: 0.25rem 1.5rem 1.15rem 1.25rem;
+    transition: background-color 0.3s ease, transform 0.3s ease,
+      border-left 0.2s ease;
     border-left: 2px solid transparent;
-    padding-left: 0.75rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 1.5rem;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    border-radius: 3px;
-    margin-bottom: 0.75rem;
+    border-radius: 5px;
+    margin-bottom: 2rem;
+    background-color: #0a192f;
 
     &:hover {
+      background-color: #112240;
       border-left: 2px solid #88ddff;
       transform: translateX(8px);
-    }
-
-    &:not(:last-child) {
-      border-bottom: 1px solid rgba(136, 221, 255, 0.05);
     }
   }
 
@@ -96,7 +93,7 @@ const projects = [
     object-fit: cover;
     box-shadow: 0 3px 12px rgba(0, 0, 0, 0.2);
     opacity: 0.8;
-    transition: opacity 0.2s ease;
+    transition: opacity 0.3s ease;
 
     .project-item:hover & {
       opacity: 1;
@@ -130,7 +127,7 @@ const projects = [
     color: #88ddff;
     text-decoration: none;
     font-size: 0.9rem;
-    transition: color 0.2s ease, opacity 0.2s ease;
+    transition: color 0.3s ease, opacity 0.3s ease;
     display: flex;
     align-items: center;
 
@@ -142,7 +139,8 @@ const projects = [
 
   .project-links a[href*="github"] {
     opacity: 0;
-    transition: opacity 0.3s ease;
+    transform: translate(5px, -5px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
 
     svg {
       width: 24px;
@@ -153,7 +151,8 @@ const projects = [
 
   .project-links a[href*="onshape"] {
     opacity: 0;
-    transition: opacity 0.3s ease;
+    transform: translate(5px, -5px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
 
     img {
       width: 24px;
@@ -161,7 +160,7 @@ const projects = [
       object-fit: contain;
       opacity: 0.85;
       filter: drop-shadow(0 0 1px rgba(136, 221, 255, 0.5));
-      transition: all 0.2s ease;
+      transition: all 0.3s ease;
     }
 
     &:hover img {
@@ -173,6 +172,7 @@ const projects = [
   .project-item:hover .project-links a[href*="github"],
   .project-item:hover .project-links a[href*="onshape"] {
     opacity: 1;
+    transform: translate(0, 0);
   }
 
   @media (max-width: 768px) {
@@ -200,7 +200,7 @@ const projects = [
   .archive-button-container {
     display: flex;
     justify-content: center;
-    margin-top: 2rem;
+    margin-top: 1rem;
     margin-bottom: 3rem;
   }
   
