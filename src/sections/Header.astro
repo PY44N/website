@@ -78,12 +78,21 @@
 
   .fixed-socials {
     position: fixed;
-    top: 2rem;
+    bottom: 0;
     left: 2rem;
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
     z-index: 10;
+
+    &::after {
+      content: "";
+      display: block;
+      width: 1px;
+      height: 90px;
+      margin: 0.75rem auto 0;
+      background-color: #a8b2d1;
+    }
 
     a {
       color: #a8b2d1;
@@ -117,6 +126,10 @@
       justify-content: center;
       margin-top: 1.5rem;
       gap: 2rem;
+
+      &::after {
+        display: none;
+      }
     }
   }
 
