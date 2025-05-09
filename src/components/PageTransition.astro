@@ -1,0 +1,37 @@
+---
+---
+
+<style>
+  .page-content {
+    animation: none;
+    opacity: 1;
+  }
+</style>
+
+<div class="page-content">
+  <slot />
+</div>
+
+<script is:inline>
+  // Simple solution to prevent animation flashing
+  document.addEventListener('DOMContentLoaded', () => {
+    // Set a flag in local storage when a page has been visited
+    localStorage.setItem('siteVisited', 'true');
+    
+    // If this is a return visit, make all animated elements visible immediately
+    if (localStorage.getItem('siteVisited') === 'true') {
+      document.querySelectorAll('.animate-on-scroll').forEach(element => {
+        element.style.opacity = '1';
+        element.style.transform = 'none';
+        element.style.transition = 'none';
+        
+        // Remove animation classes to prevent conflicts
+        if (element.dataset.animation) {
+          const classes = element.dataset.animation.split(' ');
+          element.classList.remove('pre-animation');
+          // Don't add animation classes
+        }
+      });
+    }
+  });
+</script>
