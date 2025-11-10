@@ -84,6 +84,37 @@
     letter-spacing: 0.05em;
     margin-bottom: 0.75rem;
   }
+
+  .nested-link {
+    color: #88ddff;
+    font-weight: 600;
+    position: relative;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.3s ease;
+
+    &::after {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 1px;
+      bottom: 0;
+      left: 0;
+      background-color: #88ddff;
+      transform: scaleX(0);
+      transform-origin: bottom right;
+      transition: transform 0.3s ease;
+    }
+
+    &:hover {
+      text-decoration: none;
+
+      &::after {
+        transform: scaleX(1);
+        transform-origin: bottom left;
+      }
+    }
+  }
 </style>
 
 <section id="experience">
@@ -131,10 +162,13 @@
       <h3>Forward Deployed Engineer @ Sea12 Technical Solutions</h3>
       <p class="date-range">May 2025 - Aug 2025</p>
       <p>
-        Leading project to design and implement a Visual-Language Model (VLM) to
-        translate task-based videos into Object-Level Planning (OLP) data to
-        enable robot training based on video tutorials, independent of robot
-        type; first author on upcoming publication
+        Led a team building <span
+          class="nested-link"
+          data-url="https://www.sea12.co/orchestrator">Orchestrator</span
+        >, designed and implemented highly scalable architecture capable of
+        handling millions of requests per day; Served as forward deployed
+        engineer, met with C-suite executives at billion-dollar companies to
+        understand business needs and offer custom solutions
       </p>
     </article>
   </a>
@@ -238,3 +272,20 @@
     </article>
   </a>
 </section>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const nestedLinks = document.querySelectorAll(".nested-link");
+
+    nestedLinks.forEach((link) => {
+      link.addEventListener("click", (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        const url = link.getAttribute("data-url");
+        if (url) {
+          window.open(url, "_blank");
+        }
+      });
+    });
+  });
+</script>
