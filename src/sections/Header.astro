@@ -22,7 +22,12 @@
     width: 100%;
     max-width: 1000px;
     height: 1px;
-    background: linear-gradient(to right, #0a192f, rgba(136, 221, 255, 0.5), #0a192f);
+    background: linear-gradient(
+      to right,
+      #0a192f,
+      rgba(136, 221, 255, 0.5),
+      #0a192f
+    );
     // background: rgba(136, 221, 255, 0.5);
     margin: 2rem auto 0rem;
     opacity: 0;
@@ -40,7 +45,7 @@
     margin: 1rem 0 1rem;
     display: flex;
     flex-wrap: wrap;
-    
+
     a {
       margin-right: 1.5rem;
       margin-bottom: 0.5rem;
@@ -95,10 +100,14 @@
       transition: height 0.3s ease;
       animation: growLine 0.5s ease forwards 0.9s;
     }
-    
+
     @keyframes growLine {
-      from { height: 0; }
-      to { height: 60px; }
+      from {
+        height: 0;
+      }
+      to {
+        height: 60px;
+      }
     }
 
     a {
@@ -108,7 +117,9 @@
       align-items: center;
       justify-content: center;
 
-      &:hover, &:active, &:focus {
+      &:hover,
+      &:active,
+      &:focus {
         color: #88ddff;
         transform: translateY(-3px);
         text-decoration: none;
@@ -139,8 +150,6 @@
       }
     }
   }
-
-
 </style>
 
 <header>
@@ -156,11 +165,11 @@
       class="animate-on-scroll"
       data-animation="enter-left stagger-delay-2">Experience</a
     >
-    <a
+    <!-- <a
       href="/#projects"
       class="animate-on-scroll"
       data-animation="enter-left stagger-delay-3">Projects</a
-    >
+    > -->
     <a
       href="/#contact"
       class="animate-on-scroll"
@@ -173,7 +182,7 @@
       data-animation="enter-left stagger-delay-5">Resume</a
     >
   </nav>
-  
+
   <div class="fixed-socials">
     <a
       href="https://github.com/PY44N"

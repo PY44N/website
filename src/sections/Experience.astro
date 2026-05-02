@@ -134,10 +134,10 @@
       </svg>
     </div>
     <article>
-      <h3>Lab Member @ Brown University Intelligent Robot Lab</h3>
+      <h3>Researcher @ Brown University Intelligent Robot Lab</h3>
       <p class="date-range">Aug 2023 - Present</p>
       <p>
-        Leading project to design and implement a Visual-Language Model (VLM) to
+        Leading project to design and implement a Vision-Language Model (VLM) to
         translate task-based videos into Object-Level Planning (OLP) data to
         enable robot training based on video tutorials, independent of robot
         type; first author on upcoming publication
@@ -204,7 +204,7 @@
     class="experience-link animate-on-scroll"
     data-animation="scale-in"
   >
-    <div class="link-icon">
+    <!-- <div class="link-icon">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
         <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
         ></path>
@@ -270,22 +270,23 @@
         Washington D.C. in April 2024
       </p>
     </article>
+  </a> -->
   </a>
-</section>
 
-<script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const nestedLinks = document.querySelectorAll(".nested-link");
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const nestedLinks = document.querySelectorAll(".nested-link");
 
-    nestedLinks.forEach((link) => {
-      link.addEventListener("click", (e) => {
-        e.preventDefault();
-        e.stopPropagation();
-        const url = link.getAttribute("data-url");
-        if (url) {
-          window.open(url, "_blank");
-        }
+      nestedLinks.forEach((link) => {
+        link.addEventListener("click", (e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          const url = link.getAttribute("data-url");
+          if (url) {
+            window.open(url, "_blank");
+          }
+        });
       });
     });
-  });
-</script>
+  </script>
+</section>
